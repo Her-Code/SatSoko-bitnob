@@ -1,4 +1,4 @@
-SatSoko-bitnob
+# SatSoko-bitnob
 An integrated e-commerce platform leveraging Lightning payments via Bitnob.
 
 📋 Prerequisites Checklist
@@ -78,13 +78,14 @@ cp .env.example .env
 
 # Start the Bitnob integration service
 npm start
-🌐 Application URLs
+
+# 🌐 Application URLs
 Service	URL	Description
 Frontend	http://localhost:3000	React-based UI for the marketplace
 Backend API	http://localhost:5000	Flask-powered REST API
 Bitnob Service	http://localhost:3001	Bitnob Lightning integration
 
-🧪 Testing the Application
+# 🧪 Testing the Application
 1. Frontend Testing
 Visit http://localhost:3000
 
@@ -118,7 +119,7 @@ Confirm webhook handling and event tracking
 
 Monitor transaction flow from frontend → Bitnob → backend
 
-📚 Additional Resources
+# 📚 Additional Resources
 React Documentation
 
 Flask Documentation
