@@ -1,20 +1,29 @@
-# SatSoko-bitnob
-## **📋 Prerequisites Checklist**
+SatSoko-bitnob
+An integrated e-commerce platform leveraging Lightning payments via Bitnob.
 
-- Node.js 16+ installed
-- Python 3.8+ installed
-- pipenv installed (`pip install pipenv`)
-- Git installed
+📋 Prerequisites Checklist
+Make sure the following are installed on your machine:
 
+Node.js (v16 or higher)
 
-## **🔧 Complete Installation Process**
+Python (v3.8 or higher)
 
-### **1. Clone the Repository**
+pipenv (pip install pipenv)
+
+Git
+
+🔧 Complete Installation Guide
+1. Clone the Repository
+bash
+Copy
+Edit
 git clone https://github.com/your-username/satsoko-bitnob.git
 cd satsoko-bitnob
-
 2. Backend Setup
-   # Navigate to backend
+bash
+Copy
+Edit
+# Navigate to backend folder
 cd server
 
 # Install Python dependencies
@@ -25,34 +34,39 @@ pipenv shell
 
 # Set up environment variables
 cp .env.example .env
-# Edit .env with your configuration
+# Edit the .env file with your backend config
 
-# Initialize database
+# Set up the database
 flask db init
 flask db migrate -m "Initial migration"
 flask db upgrade
 
-# Start backend server
+# Start the backend server
 flask run
-
 3. Frontend Setup
-   # Open new terminal and navigate to frontend
+bash
+Copy
+Edit
+# Open a new terminal window/tab
+cd client  # assuming the frontend folder is named 'client'
 
 # Install Node.js dependencies
 npm install
 
-# If you encounter peer dependency issues
+# If you face peer dependency issues
 npm install --legacy-peer-deps
 
 # Set up environment variables
 cp .env.example .env
-# Edit .env with your configuration
+# Edit the .env file with frontend configuration
 
-# Start frontend development server
+# Start the frontend dev server
 npm start
-
 4. Bitnob Integration Setup
-   # Open new terminal and navigate to bitnob
+bash
+Copy
+Edit
+# Open another terminal window/tab
 cd bitnob
 
 # Install Node.js dependencies
@@ -60,45 +74,64 @@ npm install
 
 # Set up environment variables
 cp .env.example .env
-# Edit .env with your Bitnob API credentials
+# Edit the .env file with your Bitnob API credentials
 
-# Start Bitnob service
+# Start the Bitnob integration service
 npm start
+🌐 Application URLs
+Service	URL	Description
+Frontend	http://localhost:3000	React-based UI for the marketplace
+Backend API	http://localhost:5000	Flask-powered REST API
+Bitnob Service	http://localhost:3001	Bitnob Lightning integration
 
-## **🌐 Application URLs**
+🧪 Testing the Application
+1. Frontend Testing
+Visit http://localhost:3000
 
-| Service | URL | Description
-|-----|-----|-----
-| Frontend | [http://localhost:3000](http://localhost:3000)
-| Backend API | [http://localhost:5000](http://localhost:5000)
-| Bitnob Service | [http://localhost:3001](http://localhost:3001)
+Register a new user and log in
 
-## **🧪 Testing the Application**
+Browse the marketplace
 
-### **1. Frontend Testing**
+Add items to cart and proceed to checkout
 
-- Visit `http://localhost:3000`
-- Test user registration and login
-- Browse marketplace and add items to cart
-- Test checkout process with both payment methods
+Test both traditional and Lightning payment methods
+
+2. Backend API Testing
+Use the provided Postman collection (or create your own)
+
+Test endpoints for:
+
+User authentication
+
+Product listings
+
+Cart and order operations
+
+Confirm DB changes via migration and CRUD operations
+
+3. Lightning / Bitnob Integration Testing
+Create and verify Lightning invoices
+
+Complete test payments
+
+Confirm webhook handling and event tracking
+
+Monitor transaction flow from frontend → Bitnob → backend
+
+📚 Additional Resources
+React Documentation
+
+Flask Documentation
+
+Bitnob API Docs
+
+🏁 Project Purpose
+SatSoko-bitnob demonstrates seamless e-commerce integration with Bitcoin Lightning payments using Bitnob. It enables:
+
+Easy vendor setup
+
+Fast and cheap microtransactions
+
+Modern web experience for emerging markets
 
 
-### **2. Backend API Testing**
-
-- Use Postman collection provided
-- Test all API endpoints
-- Verify database operations
-- Check authentication flows
-
-
-### **3. Lightning Integration Testing**
-
-- Test Lightning invoice creation
-- Verify payment processing
-- Check webhook functionality
-
-  ## **📚 Additional Resources**
-
-- [React Documentation](https://reactjs.org/docs)
-- Flask Documentation
-- https://docs.bitnob.com/
