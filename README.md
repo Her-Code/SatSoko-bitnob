@@ -26,15 +26,38 @@ Edit
 # Navigate to backend folder
 cd server
 
-# Install Python dependencies
-pipenv install
+# 1. Navigate to the backend directory
+cd server
 
-# Activate virtual environment
-pipenv shell
+# 2. Create a virtual environment
+python -m venv venv
 
-# Set up environment variables
-cp .env.example .env
-# Edit the .env file with your backend config
+# 3. Activate the virtual environment
+
+# On Windows (PowerShell):
+.\venv\Scripts\Activate.ps1
+
+# On Windows (CMD):
+venv\Scripts\activate
+
+# On macOS/Linux:
+source venv/bin/activate
+
+# 4. Install all dependencies
+pip install -r requirements.txt
+
+# 5. Set environment variables (example for PowerShell)
+$env:FLASK_APP = "app.py"
+$env:FLASK_ENV = "development"
+
+# 6. Initialize the database
+flask db init
+flask db migrate -m "Initial migration"
+flask db upgrade
+
+# 7. Run the Flask development server
+flask run
+
 
 # Set up the database
 flask db init
