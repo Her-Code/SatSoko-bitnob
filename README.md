@@ -120,11 +120,11 @@ Confirm webhook handling and event tracking
 Monitor transaction flow from frontend → Bitnob → backend
 
 # 📚 Additional Resources
-React Documentation
+React Documentation https://reactjs.org/docs
 
 Flask Documentation
 
-Bitnob API Docs
+Bitnob API Docs https://docs.bitnob.com/
 
 🏁 Project Purpose
 SatSoko-bitnob demonstrates seamless e-commerce integration with Bitcoin Lightning payments using Bitnob. It enables:
